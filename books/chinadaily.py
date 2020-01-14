@@ -24,8 +24,12 @@ class ChinaDaily(BaseFeedBook):
     # 指定要提取的包含文章列表的主题页面链接
     # 每个主题是包含主题名和主题页面链接的元组
     feeds = [
-        (u'National affairs', 'http://www.chinadaily.com.cn/china/governmentandpolicy'),
+        (u'National', 'http://www.chinadaily.com.cn/china/59b8d010a3108c54ed7dfc23'),
         (u'Society', 'http://www.chinadaily.com.cn/china/society'),
+        (u'Middle East', 'http://www.chinadaily.com.cn/world/middle_east'),
+        (u'Asia-Pacific', 'http://www.chinadaily.com.cn/world/asia_pacific'),
+        (u'Middle East', 'http://www.chinadaily.com.cn/world/middle_east'),
+        (u'Editional', 'http://www.chinadaily.com.cn/opinion/editionals'),
     ]
 
     page_encoding = 'utf-8' # 设定待抓取页面的页面编码
@@ -37,7 +41,7 @@ class ChinaDaily(BaseFeedBook):
         dict(name='div', id='Content'),
     ]
 
-    max_articles_per_feed = 40 # 设定每个主题下要最多可抓取的文章数量
+    max_articles_per_feed = 20 # 设定每个主题下要最多可抓取的文章数量
     oldest_article = 1 # 设定文章的时间范围。小于等于365则单位为天，否则单位为秒，0为不限制。
 
     # 提取每个主题页面下所有文章URL
